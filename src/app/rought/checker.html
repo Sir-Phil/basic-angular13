@@ -1,0 +1,282 @@
+<!-- <div class="product-container">
+    <div class="product-left" [style]="{'margin-right':'50rem'}">
+                <p-card class="side-product">
+                    <img src="assets/images/ucm_poster01.jpg" alt="thumbnail">
+                    <div class="flex flex-col space-y-3.5 image-overlay-shade">
+                        <button pButton="button" class="btn" pTooltip="Add To Cart">
+                            <i class="pi pi-shopping-cart" style="font-size: 1rem;"></i>
+                        </button>
+                        <button class="btn" pButton="button" class="btn" pTooltip="Compare">
+                            <i class="pi pi-sync" style="font-size: 1rem;"></i>
+                        </button>
+                        <button class="btn" pButton="button" class="btn" pTooltip="Quick View" >
+                            <i class="pi pi-eye" style="font-size: 1rem;"></i>
+                        </button>
+                        <button class="btn" pButton="button" class="btn" pTooltip="Favourite">
+                            <i class="pi pi-camera" style="font-size: 1rem;"></i>
+                        </button>
+                    </div>
+                </p-card>
+            </div>
+    </div>
+    <div class="product-right">
+
+</div> -->
+<!-- =======================================REWORK BELOW=================================== -->
+<div class="body-contianer-flex">
+    <div class="body-contianer">
+        <!-- <div class="side-product">
+                <p-tabView>
+                    <p-tabPanel header="Top Rated">
+                        <div class="flex flex-col grid-cols-4 gap-4">
+                            <p-card *ngFor="let product of products" class="cursor-pointer" >
+                                <img [src]="product.imageUrl" [alt]="product.name" class="object-cover h-48 w-96 w-full aspect-video cursor-pointer">
+                                <div class="product-new-price">
+                                    <p>{{product.productName}} </p>
+                                    <p>{{product.price}} </p>
+                                </div>
+                            </p-card>
+                        </div>
+                    </p-tabPanel>
+                </p-tabView>
+            </div> -->
+        <div class="product-body">
+            <div class="">
+                <div class="product-trend-header">Trending Items</div>
+                <div class="hr"></div>
+                <div class="product-trending ml-32 mt-4">
+                    <div class="inline-grid grid-cols-4 gap-4">
+                        <p-card *ngFor="let product of products" class="cursor-pointer image-overlay">
+                            <img [src]="product.imageUrl" [alt]="product.name" >
+                            <div class="flex flex-col space-y-2 image-overlay-shade">
+                        <button class="btn" pTooltip="Add To Cart">
+                            <i class="pi pi-shopping-cart" style="font-size: 1rem;"></i>
+                        </button>
+                        <button class="btn" pTooltip="Compare">
+                            <i class="pi pi-sync" style="font-size: 1rem;"></i>
+                        </button>
+                        <button class="btn" pTooltip="Quick View">
+                            <i class="pi pi-eye" style="font-size: 1rem;"></i>
+                        </button>
+                        <button class="btn" pTooltip="Favourite">
+                            <i class="pi pi-heart-fill" style="font-size: 1rem;"></i>
+                        </button>
+                    </div>
+                            <div class="product-price">
+                                <p>{{product.productName}} </p>
+                                <p>{{product.price}}</p>
+                            </div>
+                
+                        </p-card>
+                    </div>
+                </div>
+            </div>
+            <div class="product-gallary">
+                <div class="product-gallary-list ml-32 mt-4">
+                <p-carousel [value]="products" 
+                [numVisible]="3" 
+                [numScroll]="3" 
+                [circular]="false" 
+                [autoplayInterval]="3000" 
+                [showIndicators]="false">
+                    <ng-template let-product pTemplate="product">
+                            <p-card class="cursor-pointer image-overlay m-2">
+                                <img [src]="product.imageUrl" [alt]="product.productName">
+                                <div class="flex flex-col space-y-2 image-overlay-shade">
+                                    <button class="btn" pTooltip="Add To Cart">
+                                        <i class="pi pi-shopping-cart" style="font-size: 1rem;"></i>
+                                    </button>
+                                    <button class="btn" pTooltip="Compare">
+                                        <i class="pi pi-sync" style="font-size: 1rem;"></i>
+                                    </button>
+                                    <button class="btn" pTooltip="Quick View" >
+                                        <i class="pi pi-eye" style="font-size: 1rem;"></i>
+                                    </button>
+                                    <button class="btn" pTooltip="Favourite">
+                                        <i class="pi pi-heart-fill" style="font-size: 1rem;"></i>
+                                    </button>
+                                </div>
+                            </p-card>                     
+                    </ng-template>
+                </p-carousel>
+                </div>
+                <!-- <div class="product-gallary-list ml-64">
+                    <div class="grid grid-cols-4 gap-4">
+                        <p-card *ngFor="let product of products" class="cursor-pointer" >
+                            <img [src]="product.imageUrl" class="object-contain h-48 w-96 w-full aspect-video cursor-pointer">
+                        </p-card>
+                    </div>
+                </div> -->
+            </div>
+            <div class="product-new">
+                <div class="hr1"></div>
+                <div class="product-new-list ml-32 mt-4">
+                    <p-tabView >
+                        <p-tabPanel header="Fruits" style="margin-left: 4rem">
+                            <div class="inline-grid grid-cols-4 gap-4">
+                                <p-card *ngFor="let product of products" class="cursor-pointer  image-overlay" >
+                                    <img [src]="product.imageUrl" [alt]="product.productName">
+                                    <div class="flex flex-col space-y-2 image-overlay-shade">
+                                        <button class="btn" pTooltip="Add To Cart">
+                                            <i class="pi pi-shopping-cart" style="font-size: 1rem;"></i>
+                                        </button>
+                                        <button class="btn" pTooltip="Compare">
+                                            <i class="pi pi-sync" style="font-size: 1rem;"></i>
+                                        </button>
+                                        <button class="btn" pTooltip="Quick View" >
+                                            <i class="pi pi-eye" style="font-size: 1rem;"></i>
+                                        </button>
+                                        <button class="btn" pTooltip="Favourite">
+                                            <i class="pi pi-heart-fill" style="font-size: 1rem;"></i>
+                                        </button>
+                                    </div>
+                                    <div class="product-new-price">
+                                        <p>{{product.productName}} </p>
+                                        <p>{{product.price}} </p>
+                                    </div>
+                                    
+                                </p-card>
+                            </div>
+                        </p-tabPanel>
+                        <p-tabPanel header="Crops/Plants">
+                            <div class="inline-grid grid-cols-4 gap-4">
+                                <p-card *ngFor="let product of products" class="cursor-pointer  image-overlay" >
+                                    <img [src]="product.imageUrl" [alt]="product.productName">
+                                    <div class="flex flex-col space-y-2 image-overlay-shade">
+                                        <button class="btn" pTooltip="Add To Cart">
+                                            <i class="pi pi-shopping-cart" style="font-size: 1rem;"></i>
+                                        </button>
+                                        <button class="btn" pTooltip="Compare">
+                                            <i class="pi pi-sync" style="font-size: 1rem;"></i>
+                                        </button>
+                                        <button class="btn" pTooltip="Quick View" >
+                                            <i class="pi pi-eye" style="font-size: 1rem;"></i>
+                                        </button>
+                                        <button class="btn" pTooltip="Favourite">
+                                            <i class="pi pi-heart-fill" style="font-size: 1rem;"></i>
+                                        </button>
+                                    </div>
+                                    <div class="product-new-price">
+                                        <p>{{product.productName}} </p>
+                                        <p>{{product.price}} </p>
+                                    </div>
+                                   
+                                </p-card>
+                            </div>
+                        </p-tabPanel> 
+                        <p-tabPanel header="Livestock">
+                            <div class="inline-grid grid-cols-4 gap-4">
+                                <p-card *ngFor="let product of products" class="cursor-pointer image-overlay" >
+                                    <img [src]="product.imageUrl" [alt]="product.productName">
+                                    <div class="flex flex-col space-y-2 image-overlay-shade">
+                                        <button class="btn" pTooltip="Add To Cart">
+                                            <i class="pi pi-shopping-cart" style="font-size: 1rem;"></i>
+                                        </button>
+                                        <button class="btn" pTooltip="Compare">
+                                            <i class="pi pi-sync" style="font-size: 1rem;"></i>
+                                        </button>
+                                        <button class="btn" pTooltip="Quick View" >
+                                            <i class="pi pi-eye" style="font-size: 1rem;"></i>
+                                        </button>
+                                        <button class="btn" pTooltip="Favourite">
+                                            <i class="pi pi-heart-fill" style="font-size: 1rem;"></i>
+                                        </button>
+                                    </div>
+                                    <div class="product-new-price">
+                                        <p>{{product.productName}} </p>
+                                        <p>{{product.price}} </p>
+                                    </div>
+                                
+                                </p-card>
+                            </div>
+                        </p-tabPanel>
+                        <p-tabPanel header="Vegetable">
+                            <div class="inline-grid grid-cols-4 gap-4">
+                                <p-card *ngFor="let product of products" class="cursor-pointer  image-overlay " >
+                                    <img [src]="product.imageUrl" [alt]="product.productName">
+                                    <div class="flex flex-col space-y-2 image-overlay-shade">
+                                        <button  class="btn" pTooltip="Add To Cart">
+                                            <i class="pi pi-shopping-cart" style="font-size: 1rem;"></i>
+                                        </button>
+                                        <button  class="btn" pTooltip="Compare">
+                                            <i class="pi pi-sync" style="font-size: 1rem;"></i>
+                                        </button>
+                                        <button  class="btn" pTooltip="Quick View" >
+                                            <i class="pi pi-eye" style="font-size: 1rem;"></i>
+                                        </button>
+                                        <button  class="btn" pTooltip="Favourite">
+                                            <i class="pi pi-heart-fill" style="font-size: 1rem;"></i>
+                                        </button>
+                                    </div>
+                                    <div class="product-new-price">
+                                        <p>{{product.productName}} </p>
+                                        <p>{{product.price}} </p>
+                                    </div>
+                                    
+                                </p-card>
+                            </div>
+                        </p-tabPanel>                                            
+                    </p-tabView>
+                </div>
+            </div>
+            <div class="product-recent">
+                <div class="product-recent-header">Recently Viewed</div>
+                <div class="hr2"></div>
+                <div class="product-recent-list ml-16 mt-4">
+                <p-carousel [value]="products" 
+                [numVisible]="4"
+                 [numScroll]="3" 
+                 [circular]="true" 
+                 [autoplayInterval]="3000" 
+                 [showIndicators]="false">
+                    <ng-template let-product pTemplate="product">
+                            <p-card class="cursor-pointer image-overlay m-2">
+                                <img [src]="product.imageUrl" [alt]="product.productName">
+                                <div class="flex flex-col space-y-2 image-overlay-shade">
+                                    <button class="btn" pTooltip="Add To Cart">
+                                        <i class="pi pi-shopping-cart" style="font-size: 1rem;"></i>
+                                    </button>
+                                    <button class="btn" pTooltip="Compare">
+                                        <i class="pi pi-sync" style="font-size: 1rem;"></i>
+                                    </button>
+                                    <button class="btn" pTooltip="Quick View" >
+                                        <i class="pi pi-eye" style="font-size: 1rem;"></i>
+                                    </button>
+                                    <button class="btn" pTooltip="Favourite">
+                                        <i class="pi pi-heart-fill" style="font-size: 1rem;"></i>
+                                    </button>
+                                </div>
+                                <div class="product-new-price">
+                                    <p>{{product.productName}} </p>
+                                    <p>{{product.price}} </p>
+                                </div>
+                                
+                            </p-card>                     
+                    </ng-template>
+                </p-carousel>
+            </div>
+            <!-- Not consider -->
+               <!-- <p-carousel [value]="productNew" styleClass="custom-carousel"  [numVisible]="5" [numScroll]="3"  [circular]="true" [autoplayInterval]="3000"  >
+                    <div class="product-recent-list ml-16 mt-4">
+                        <div class="inline-grid grid-cols-5 gap-4">
+                            <p-card *ngFor="let product of productNew" class="cursor-pointer" >
+                                <img [src]="product.imageUrl" [alt]="product.name" class="object-cover h-48 w-96 w-full aspect-video cursor-pointer">
+                                <div class="product-new-price">
+                                    <p>{{product.productName}} </p>
+                                    <p>{{product.price}} </p>
+                                </div>
+                            </p-card>
+                        </div>
+                    </div>
+               </p-carousel> -->
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<!-- <p-card>
+    
+</p-card> -->
