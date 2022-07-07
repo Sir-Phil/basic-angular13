@@ -13,6 +13,8 @@ import { ProductsComponent } from './components/products/products.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CartsComponent } from './components/carts/carts.component';
 import { FormsModule } from '@angular/forms';
+import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
+import { StarComponent } from './shared/star.component';
 
 
 
@@ -26,7 +28,9 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     ProductsComponent,
     HeaderComponent,
-    CartsComponent
+    CartsComponent,
+    ConvertToSpacesPipe,
+    StarComponent
   ],
   imports: [
     BrowserModule,
