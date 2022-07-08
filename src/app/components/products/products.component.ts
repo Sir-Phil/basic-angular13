@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/service/app.service';
 import { ProductService } from 'src/app/service/product.service';
-import { IProoduct } from './product';
+import { IProduct } from './product';
 
 @Component({
   selector: 'app-products',
@@ -15,6 +15,7 @@ imageWidth: number = 50;
 imageMargin: number = 2;
 titlePage: string = "CAD Super-Store";
 displayImage: boolean = false;
+errorMessage: string;
 
 
 _ProductFilter: string;
@@ -26,8 +27,8 @@ set ProductFilter(value: string) {
   this.filterProduct = this.ProductFilter ? this.performFilter(this.ProductFilter) : this.products;
 }
 
-filterProduct: IProoduct[];
-products : IProoduct [];
+filterProduct: IProduct[] = [];
+products : IProduct [] = [];
 
 constructor( private productService: ProductService) {
   // this.ProductFilter = 'goat';
@@ -37,15 +38,21 @@ onStarRatingClicked(message: string): void {
   this.titlePage = "Product Item: " + message;
 }
 
-performFilter(filterBy: string) : IProoduct[] {
+performFilter(filterBy: string) : IProduct[] {
   filterBy = filterBy.toLocaleLowerCase();
-  return this.products.filter((product : IProoduct) => 
+  return this.products.filter((product : IProduct) => 
   product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1);
 }
 
 ngOnInit(): void {
-  this.products = this.productService.getProducts();
-  this.filterProduct = this.products;
+  this.productService.getProducts().subscribe({
+    next: products => {
+      this.products = products
+      this.filterProduct = this.products;
+    },
+    error: err => this.errorMessage = err
+  });
+  
   }
 
   imageToggle(): void{
