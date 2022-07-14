@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  pageTitle = 'company-form';
+  pageTitle = 'Salers And Buyers Box';
 }
